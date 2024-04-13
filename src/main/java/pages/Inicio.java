@@ -67,7 +67,7 @@ public class Inicio {
         pasajero.click();
     }
 
-    public void numPasajerosAdultos(){
+    public void numPasajeros(){
         List<WebElement> pasajeroAdulto =
                 driver.findElements(By.className("plus"));
         //Realiza un clic al boton para seleccionar 1 pasajero adulto más del que aparece al inicio de pagína
@@ -86,6 +86,14 @@ public class Inicio {
         WebElement buscar =
                 driver.findElement(By.className("transaction"));
         buscar.click();
+    }
+
+    //Vuelos + Hotel
+
+    public void vuelosHotel(){
+        WebElement vh =
+                driver.findElement(By.xpath("//*[@id=\"multiQsf\"]/div[1]/div[3]/div/div[2]/a"));
+        vh.click();
     }
 
 }

@@ -1,3 +1,2 @@
 
-L
-java:S1068"*Remove this unused "driver" private field.(š…ŒÅøÿÿÿÿ8Ï¹Â¿í1
+r	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ´ãÛıÿÿÿÿ8ôºÌí1

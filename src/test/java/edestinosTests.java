@@ -3,10 +3,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.edge.EdgeDriver;
 import pages.Inicio;
 import pages.Vuelos;
+import pages.VuelosHotel;
 
 import java.time.Duration;
 
@@ -31,17 +32,18 @@ public class edestinosTests {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
-//    @AfterEach
-//    public void cerrarNavegador() {
-//        //cerrar ventana
-//        driver.quit();
-//    }
+    @AfterEach
+    public void cerrarNavegador() {
+        //cerrar ventana
+        driver.quit();
+    }
 
     @Test
     void Vuelos(){
 
         //Vuelos
         //----------------------------------------------------------
+
         Inicio paginaInicio = new Inicio(driver);
 
         paginaInicio.soloIda();
@@ -57,7 +59,7 @@ public class edestinosTests {
         paginaInicio.fechaRegreso();
 
         paginaInicio.pasajeros();
-        paginaInicio.numPasajerosAdultos();
+        paginaInicio.numPasajeros();
         paginaInicio.pasajeros();
 
         paginaInicio.buscarInfo();
@@ -70,11 +72,34 @@ public class edestinosTests {
         String recomienda = paginaVuelos.recomendacion();
         assertEquals("Vuelos en fechas cercanas", recomienda);
 
+    }
+
+    @Test
+    void VueloHotel(){
+
         //Vuelos + Hotel
         //-----------------------------------------------------------
 
+        Inicio paginaInicio = new Inicio(driver);
 
+        paginaInicio.vuelosHotel();
 
+        VuelosHotel paginaVuelosHotel = new VuelosHotel(driver);
+
+        paginaVuelosHotel.origen("Pereira");
+        paginaVuelosHotel.escogerOrigen();
+        paginaVuelosHotel.destino("Bogota");
+        paginaVuelosHotel.escogerDestino();
+
+        paginaVuelosHotel.fechas();
+
+        paginaVuelosHotel.pasajeros();
+        paginaVuelosHotel.numPasajeroNino();
+
+        paginaVuelosHotel.buscarInfo();
+
+        String recClien = paginaVuelosHotel.verificar();
+        assertEquals("recomendados por viajeros", recClien);
     }
 
 }
