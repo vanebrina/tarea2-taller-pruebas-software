@@ -95,6 +95,7 @@ public class VuelosHotel {
     public String verificar(){
         List<WebElement> recomendaciones =
                 driver.findElements(By.className("desc"));
+        System.out.println(recomendaciones.get(2).getText());
         return recomendaciones.get(2).getText();
     }
 

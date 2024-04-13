@@ -1,2 +1,3 @@
 
-r	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ´ãÛıÿÿÿÿ8ôºÌí1
+r	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ´ãÛıÿÿÿÿ8¦ÙáÌí1
+G	java:S106b"+Replace this use of System.out by a logger.(ˆÎ´›8¶ÙáÌí1
